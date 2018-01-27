@@ -1,0 +1,25 @@
+        int pivot = array[start];
+
+        boolean done = false;
+
+        int lowIndex = start - 1;
+        int highIndex = end + 1;
+
+        while(!done)
+        {
+            do
+            {
+                lowIndex++;
+            }while(array[lowIndex] < pivot);
+
+            do
+            {
+                highIndex--;
+            }while(array[highIndex] > pivot);
+
+            if(lowIndex >= highIndex)
+                return highIndex;
+
+            swap(array, lowIndex, highIndex);
+        }
+        return highIndex;
